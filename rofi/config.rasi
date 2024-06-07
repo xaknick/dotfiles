@@ -1,0 +1,8 @@
+configuration {
+ modi: "window,drun,combi";
+ combi-modi: "window,drun";
+ show-icons: true;
+ display-drun: "";
+ display-window: "🗔";
+ }
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
