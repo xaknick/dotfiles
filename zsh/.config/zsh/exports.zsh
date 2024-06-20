@@ -11,3 +11,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # macOS specific configuration
   PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 fi
+
+# Starship config
+export STARSHIP_CONFIG="$HOME/.config/zsh/starship.toml"

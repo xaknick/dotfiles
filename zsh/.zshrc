@@ -15,3 +15,6 @@ HISTFILE=~/.zsh_history
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/dotnet.zsh"
+
+# Starship promt
+eval "$(starship init zsh)"
