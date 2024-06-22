@@ -18,3 +18,6 @@ plug "$HOME/.config/zsh/dotnet.zsh"
 
 # Starship promt
 eval "$(starship init zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
