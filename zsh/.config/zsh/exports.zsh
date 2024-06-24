@@ -14,3 +14,6 @@ fi
 
 # Starship config
 export STARSHIP_CONFIG="$HOME/.config/zsh/starship.toml"
+
+# ZSH plugins
+export ZSH_PLUGINS="$HOME/.config/zsh/plugins"
