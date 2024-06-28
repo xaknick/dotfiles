@@ -7,7 +7,10 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'Tokyo Night'
-config.font = wezterm.font 'MesloLGS NF'
+config.font = wezterm.font_with_fallback {
+  'MesloLGS NF',
+  'JetBrains Mono'
+}
 config.font_size = 16.0
 config.foreground_text_hsb = {
   hue = 1.0,
