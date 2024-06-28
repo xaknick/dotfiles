@@ -36,3 +36,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   # Configuration for macOS
   source <(fzf --zsh)
 fi
+
+show_file_or_dir_preview="if [ -d {} ]; then eza --all --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --all --tree --color=always {} | head -200'"
