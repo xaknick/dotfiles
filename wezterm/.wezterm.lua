@@ -19,6 +19,13 @@ config.foreground_text_hsb = {
 config.initial_cols = 140
 config.initial_rows = 50
 
+-- Window decoration
+config.tab_bar_at_bottom = false
+config.window_decorations = "RESIZE"
+config.use_fancy_tab_bar = false
+config.window_background_opacity = 0.95
+config.macos_window_background_blur = 20
+
 -- Key bindings 
 config.keys = {
   {
