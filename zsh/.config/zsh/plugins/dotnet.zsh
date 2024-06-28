@@ -19,4 +19,7 @@ _dotnet_zsh_complete()
 
 compdef _dotnet_zsh_complete dotnet
 
-
+# FZF completion
+_fzf_complete_dotnet() {
+  _fzf_complete --reverse --prompt="$@> " -- "$@" < <(dotnet complete $@ )
+}
