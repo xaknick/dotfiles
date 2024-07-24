@@ -19,5 +19,12 @@ opt.termguicolors = true
 
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+
+-- Keymaps
 vim.g.mapleader = " "
+
+local keymap = vim.keymap
+
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
