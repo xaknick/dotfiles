@@ -1,6 +1,10 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+-- OS recognition
+local is_darwin <const> = wezterm.target_triple:find("darwin") ~= nil
+local is_linux <const> = wezterm.target_triple:find("linux") ~= nil
+
 -- Configuring Appearance
 if wezterm.config_builder then
     config = wezterm.config_builder()
@@ -45,13 +49,22 @@ config.keys = {
   }
 }
 
--- Maximizing window while starting up
-local mux = wezterm.mux
 
-wezterm.on("gui-startup", function()
-  local tab, pane, window = mux.spawn_window{}
-  window:gui_window():maximize()
-end)
+-- OS related settings
+local mux = wezterm.mux
+if is_darwin then
+  wezterm.on("gui-startup", function()
+    local tab, pane, window = mux.spawn_window{}
+    window:gui_window():maximize()
+  end)
+elseif is_linux then
+  -- Disable wayland because of many issues
+  config.enable_wayland = false
+  config.font_size = 14.0
+  wezterm.on("gui-startup", function()
+    local tab, pane, window = mux.spawn_window{}
+    window:gui_window():toggle_fullscreen()
+  end)
+end
 
 return config
-
