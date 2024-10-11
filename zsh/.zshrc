@@ -11,6 +11,8 @@ compinit
 # history
 HISTFILE=~/.zsh_history
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # source and plugins
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
