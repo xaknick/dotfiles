@@ -21,23 +21,8 @@ plug "$ZSH_PLUGINS/*"
 # Starship promt
 eval "$(starship init zsh)"
 
-# Set up fzf key bindings and fuzzy completion
-# Fedora has an old version of fzf, so I need to configure it manually
-# RPM bugzilla: https://bugzilla.redhat.com/show_bug.cgi?id=2256379
-# Fzf issue: https://github.com/junegunn/fzf/issues/3827
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  # Configuration for Fedora
-  if [[ -f /usr/share/fzf/shell/key-bindings.zsh ]]; then
-    source /usr/share/fzf/shell/key-bindings.zsh
-  fi
-
-  if [[ -f /usr/share/fzf/shell/completion.zsh ]]; then
-    source /usr/share/fzf/shell/completion.zsh
-  fi
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  # Configuration for macOS
-  source <(fzf --zsh)
-fi
+# fzf config
+source <(fzf --zsh)
 
 show_file_or_dir_preview="if [ -d {} ]; then eza --all --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
