@@ -6,7 +6,17 @@ plug "zsh-users/zsh-syntax-highlighting"
 
 # Load and initialise completion system
 autoload -Uz compinit
-compinit
+# Optimizing slow compinit
+if [[ -r ~/.zcompdump ]]; then
+  zcompdump_cache=~/.zcompdump.$HOST
+  if [[ ! -f $zcompdump_cache || ~/.zcompdump -nt $zcompdump_cache ]]; then
+    compinit -u -d $zcompdump_cache
+  else
+    compinit -C -d $zcompdump_cache
+  fi
+else
+  compinit &
+fi
 
 # history
 HISTFILE=~/.zsh_history
