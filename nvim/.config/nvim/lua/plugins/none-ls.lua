@@ -1,37 +1,25 @@
 return {
-  "nvimtools/none-ls.nvim",
-  config = function()
-    local null_ls = require("null-ls")
+	"nvimtools/none-ls.nvim",
+	config = function()
+		local null_ls = require("null-ls")
+		local formatting = null_ls.builtins.formatting
+		require("null-ls").setup({
+			sources = {
+				formatting.stylua,
+				formatting.nixfmt,
+			},
+		})
 
-    -- Function to check for ESLint configuration
-    local function has_eslint_config()
-      -- Define common ESLint config file names
-      local eslint_config_files = {".eslintrc.js", ".eslintrc.json", ".eslintrc", ".eslintrc.yml", ".eslintrc.yaml"}
-      for _, config_file in ipairs(eslint_config_files) do
-        -- Use vim.fn.glob to check for file existence (supports pattern matching)
-        if vim.fn.glob(config_file) ~= "" then
-          return true
-        end
-      end
-      return false
-    end
+		-- formatting command
+		vim.api.nvim_create_user_command("Format", function()
+			vim.lsp.buf.format(nil, 10000)
+		end, {})
 
-    -- Default null-ls sources
-    local sources = {
-      null_ls.builtins.formatting.stylua,
-      null_ls.builtins.completion.spell,
-      null_ls.builtins.formatting.prettierd,
-    }
-
-    -- Conditionally add eslint_d to null-ls sources
-    if has_eslint_config() then
-      table.insert(sources, null_ls.builtins.diagnostics.eslint_d)
-    end
-
-    -- Setup null-ls with the configured sources
-    null_ls.setup({
-      sources = sources,
-    })
-  end
+		vim.keymap.set(
+			"n",
+			"<leader>fm",
+			":Format<CR>",
+			{ desc = "Format current buffer (also done on save)", noremap = true, silent = true }
+		)
+	end
 }
-
