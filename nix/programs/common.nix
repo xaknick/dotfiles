@@ -15,6 +15,7 @@
     eza
 
     stow
+    just
     neofetch
     mc
     yazi
