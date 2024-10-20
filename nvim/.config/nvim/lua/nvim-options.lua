@@ -28,10 +28,3 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.whichwrap = 'bs<>[]hl' -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
 
--- Keymaps
-vim.g.mapleader = " "
-
-local keymap = vim.keymap
-
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-
