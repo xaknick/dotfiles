@@ -17,6 +17,3 @@ export STARSHIP_CONFIG="$HOME/.config/zsh/starship.toml"
 
 # ZSH plugins
 export ZSH_PLUGINS="$HOME/.config/zsh/plugins"
-
-# Dev certs
-export DEVCERTS="$HOME/devcerts"
