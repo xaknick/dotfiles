@@ -13,7 +13,6 @@
     starship
     bat
     eza
-
     stow
     just
     neofetch
@@ -30,16 +29,18 @@
     btop
     wget
     curl
-
-    # Nvim
-    neovim
-    xclip # for neovim clipboard
-    # LSP and formatting configuration
-    nil # lsp for .nix (nvim)
-    lua-language-server
-    stylua
-    nixfmt-rfc-style
   ];
+
+  programs.neovim = {
+    enable = true;
+    extraPackages = with pkgs; [
+      stylua
+      lua-language-server
+      xclip # for neovim clipboard
+      nil # lsp for .nix (nvim)
+      nixfmt-rfc-style
+    ];
+  };
 
   # dotfiles
   # Activation script to run stow using its Nix store path
