@@ -28,3 +28,5 @@ vim.keymap.set('v', '>', '>gv', opts)
 
 -- Keep last yanked when pasting
 vim.keymap.set('v', 'p', '"_dP', opts)
+
+vim.keymap.set('n', '<leader>ch', '<cmd>checkhealth<CR>', opts)
