@@ -25,6 +25,21 @@ opt.termguicolors = true
 
 opt.mouse = 'a' -- Mouse mode "all"
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.whichwrap = 'bs<>[]hl' -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
 
+-- Sync clipboard between OS and Neovim.
+-- Schedule the setting after `UiEnter` because it can increase startup-time.
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
+
+-- Decrease update time
+vim.opt.updatetime = 250
+
+-- Decrease mapped sequence wait time
+-- Displays which-key popup sooner
+vim.opt.timeoutlen = 300
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
