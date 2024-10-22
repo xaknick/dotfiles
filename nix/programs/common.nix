@@ -29,6 +29,7 @@
     btop
     wget
     curl
+    ncdu
   ];
 
   programs.neovim = {
