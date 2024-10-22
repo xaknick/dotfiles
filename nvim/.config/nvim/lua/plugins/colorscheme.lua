@@ -6,6 +6,17 @@ return {
 				extra_groups = {
 					"NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
 				},
+				exclude_groups = {
+					"CursorLine",
+					"NeoTreeCursorLine",
+					"TelescopeSelection",
+					"TelescopePreviewLine",
+					"TelescopePreviewMatch",
+					"TelescopeSelectionCaret",
+					"TelescopeResultsDiffAdd",
+					"TelescopeResultsDiffDelete",
+					"TelescopeResultsDiffChange",
+				},
 			})
 			require("transparent").clear_prefix("NeoTree")
 			require("transparent").clear_prefix("Telescope")
