@@ -32,6 +32,12 @@ return {
 				},
 				use_libuv_file_watcher = true,
 			},
+			window = {
+				mappings = {
+					["l"] = "open",
+					["h"] = "close_node",
+				},
+			},
 		})
 	end,
 }
