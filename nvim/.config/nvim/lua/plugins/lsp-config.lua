@@ -32,7 +32,7 @@ return {
       if not os_utils.is_nixos() then
         require("mason").setup()
         require("mason-lspconfig").setup({
-          ensure_installed = { "lua_ls", "nil_ls" }, -- Add any additional LSPs here
+          ensure_installed = { "lua_ls" }, -- Add any additional LSPs here
         })
       end
     end,
