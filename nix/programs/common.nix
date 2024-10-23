@@ -13,6 +13,7 @@
     starship
     bat
     eza
+    zoxide
     stow
     just
     neofetch
