@@ -50,10 +50,10 @@
   home.activation.stow = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -d "${config.home.homeDirectory}/dotfiles" ]; then
       ${pkgs.git}/bin/git clone https://github.com/xaknick/dotfiles.git ${config.home.homeDirectory}/dotfiles
+      echo "Running stow for dotfiles"
+      cd ${config.home.homeDirectory}/dotfiles
+      ${pkgs.stow}/bin/stow nvim zsh wezterm yazi
     fi
-    echo "Running stow for dotfiles"
-    cd ${config.home.homeDirectory}/dotfiles
-    ${pkgs.stow}/bin/stow nvim zsh wezterm
   '';
 
   # Activation script to install zap during home-manager activation
