@@ -2,11 +2,14 @@ return {
 	"nvimtools/none-ls.nvim",
 	config = function()
 		local null_ls = require("null-ls")
+		local diagnostics = null_ls.builtins.diagnostics
 		local formatting = null_ls.builtins.formatting
 		require("null-ls").setup({
 			sources = {
 				formatting.stylua,
 				formatting.nixfmt,
+				formatting.yamlfmt,
+				diagnostics.yamllint,
 			},
 		})
 
