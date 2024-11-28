@@ -21,7 +21,3 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
-
-# Ignore non-config files
-/ansible/*
-/nix/*
