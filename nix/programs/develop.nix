@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = [ 
-    pkgs.postgresql
-    pkgs.dotnet-sdk_8
+  environment.systemPackages = with pkgs; [ 
+    postgresql
+    dotnet-sdk_8
+    nodejs_18
   ];
 
   virtualisation.docker.enable = true;

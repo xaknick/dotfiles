@@ -3,7 +3,10 @@
   home.username = "xaknick";
   home.homeDirectory = "/home/xaknick";
 
-  imports = [ ./programs/common.nix ];
+  imports = [ 
+    ./programs/common.nix
+    ./programs/ide.nix
+  ];
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
