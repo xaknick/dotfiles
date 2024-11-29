@@ -1,6 +1,19 @@
 #!/bin/sh
-# Created by Zap installer
-[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+# Zap installer
+ZAP_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zap"
+if [ ! -d "$ZAP_DIR" ]; then
+  echo "Zap is not installed. Installing to $ZAP_DIR..."
+  git clone --depth=1 https://github.com/zap-zsh/zap.git "$ZAP_DIR"
+fi
+
+# Source Zap
+if [ -f "$ZAP_DIR/zap.zsh" ]; then
+  source "$ZAP_DIR/zap.zsh"
+else
+  echo "Zap installation is incomplete. Please check $ZAP_DIR."
+fi
+
+# Zap plugins
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 
