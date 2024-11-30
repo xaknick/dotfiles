@@ -10,6 +10,8 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
+config.front_end = "WebGpu"
+
 config.default_cursor_style = 'SteadyBar'
 
 config.color_scheme = 'Tokyo Night'
@@ -24,13 +26,12 @@ config.foreground_text_hsb = {
   brightness = 0.9,
 }
 
--- Resolution
-config.initial_cols = 140
-config.initial_rows = 50
+-- -- Resolution
+-- config.initial_cols = 140
+-- config.initial_rows = 50
 
 -- Window decoration
 config.tab_bar_at_bottom = false
-config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 20
@@ -59,14 +60,14 @@ if is_darwin then
     local tab, pane, window = mux.spawn_window{}
     window:gui_window():maximize()
   end)
+  config.window_decorations = "RESIZE"
 elseif is_linux then
-  -- Disable wayland because of many issues
-  config.enable_wayland = false
+  config.enable_wayland = true
   config.font_size = 14.0
-  wezterm.on("gui-startup", function()
-    local tab, pane, window = mux.spawn_window{}
-    window:gui_window():toggle_fullscreen()
-  end)
+  -- wezterm.on("gui-startup", function()
+  --   local tab, pane, window = mux.spawn_window{}
+  --   window:gui_window():toggle_fullscreen()
+  -- end)
 end
 
 return config
