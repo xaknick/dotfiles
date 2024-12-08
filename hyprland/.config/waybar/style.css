@@ -11,15 +11,12 @@ window#waybar {
     background: transparent;
     background-color: @crust;
     color: @overlay0;
-    transition-property: background-color;
-    transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
 }
 
 #window {
     margin: 8px;
-    padding-left: 8;
-    padding-right: 8;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 button {
@@ -86,8 +83,15 @@ button:hover {
 }
 
 #pulseaudio {
+    min-width: 65px;
     color: @blue;
     border-bottom: 2px solid @blue;
+}
+
+#backlight {
+    min-width: 65px;
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
 }
 
 #network {
