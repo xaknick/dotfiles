@@ -31,6 +31,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
+  -- Comment a line by hotkey
   {
     "numToStr/Comment.nvim",
     opts = {},
@@ -43,6 +44,13 @@ return {
         "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
         opts
       )
+    end,
+  },
+  -- Highlight CSS colors
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require('nvim-highlight-colors').setup({})
     end,
   },
 }
