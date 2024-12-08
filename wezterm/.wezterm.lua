@@ -6,6 +6,7 @@ local config = {}
 local is_darwin <const> = wezterm.target_triple:find("darwin") ~= nil
 local is_linux <const> = wezterm.target_triple:find("linux") ~= nil
 local is_tiling <const> = os.getenv("HYPRLAND_CMD") ~= nil
+local defined_font <const> = os.getenv("WEZTERM_FONT")
 
 -- Configuring Appearance
 if wezterm.config_builder then
@@ -17,7 +18,7 @@ config.default_cursor_style = "SteadyBar"
 
 config.color_scheme = "Tokyo Night"
 config.font = wezterm.font_with_fallback({
-	"MesloLGS NF",
+	defined_font or "MesloLGS NF",
 	"JetBrains Mono",
 })
 config.foreground_text_hsb = {
@@ -71,11 +72,11 @@ elseif is_linux then
 	-- Tiling WM
 	if is_tiling then
 		config.enable_wayland = true
-	config.font_size = 13
+		config.font_size = 13
 		-- Regular WM
 	else
 		config.enable_wayland = false
-	config.font_size = 14
+		config.font_size = 14
 		wezterm.on("gui-startup", function()
 			local tab, pane, window = mux.spawn_window({})
 			window:gui_window():toggle_fullscreen()
