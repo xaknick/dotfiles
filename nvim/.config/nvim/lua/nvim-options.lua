@@ -20,6 +20,7 @@ opt.smartcase = true
 
 opt.cursorline = true
 opt.showmode = false
+opt.virtualedit = "block"
 
 opt.termguicolors = true
 
