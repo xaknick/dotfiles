@@ -1,0 +1,45 @@
+- hosts: localhost
+  gather_facts: no
+  vars:
+    meslo_fonts_fedora: "https://raw.githubusercontent.com/rpmsphere/noarch/master/m/meslo-lg-fonts-1.2.1-4.1.noarch.rpm" 
+    common:
+      - wezterm
+      - fzf
+      - ripgrep
+      - starship
+      - bat
+      - eza
+      - zoxide
+      - stow
+      - just
+      - neofetch
+      - mc
+      - yazi
+      - lazygit
+      - zip
+      - unzip
+      - jq
+      - cowsay
+      - file
+      - which
+      - tree
+      - btop
+      - wget
+      - curl
+      - ncdu
+      - rofi-wayland
+    developer:
+      - docker
+      - node
+       
+  tasks:
+    - name: Add meslo lg font
+      set_fact:
+        common: "{{ common + [meslo_fonts_fedora] }}" 
+    
+    - name: Install each application from the app_list
+      dnf:
+        name: "{{ item }}"
+        state: present
+      become: true
+      loop: "{{ common }}"
