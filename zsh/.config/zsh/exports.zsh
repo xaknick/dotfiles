@@ -1,7 +1,7 @@
 #!/bin/sh
 HISTSIZE=1000000
 SAVEHIST=1000000
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=nvim
 
 # Path variables
 export PATH="$HOME/.local/bin":$PATH
