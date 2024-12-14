@@ -20,4 +20,8 @@ M.is_nixos = function()
   return is_nixos
 end
 
+M.is_regular_unix = function()
+  return M.is_nixos() == false
+end
+
 return M

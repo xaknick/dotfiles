@@ -14,12 +14,11 @@ return {
         },
       })
 
-      if not os_utils.is_nixos() then
+      if os_utils.is_regular_unix() then
         require("mason").setup()
         require("mason-lspconfig").setup({
           ensure_installed = {
             "lua_ls",
-            "ansiblels",
             "yamlls",
           },
         })
