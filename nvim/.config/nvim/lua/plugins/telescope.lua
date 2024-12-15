@@ -9,6 +9,7 @@ return {
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
+    local open_with_trouble = require("trouble.sources.telescope").open
 
     telescope.setup({
       defaults = {
@@ -17,24 +18,27 @@ return {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ["<c-t>"] = open_with_trouble,         -- open with trouble
+          },
+          n = {
+            ["<c-t>"] = open_with_trouble,
           },
         },
       },
       pickers = {
         live_grep = {
-          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+          file_ignore_patterns = { "node_modules", ".git", ".venv" },
           additional_args = function(_)
             return { "--hidden" }
-          end
+          end,
         },
         find_files = {
-          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
-          hidden = true
-        }
-
+          file_ignore_patterns = { "node_modules", ".git", ".venv" },
+          hidden = true,
+        },
       },
       extensions = {
-        "fzf"
+        "fzf",
       },
     })
 
@@ -42,7 +46,7 @@ return {
 
     local keymap = vim.keymap
 
-    keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
+    keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
     keymap.set("n", "<leader>fn", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
     keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Fuzzy find registers" })
     keymap.set("n", "<leader>ff", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
