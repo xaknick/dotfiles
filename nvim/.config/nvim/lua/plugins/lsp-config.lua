@@ -14,6 +14,8 @@ return {
         },
       })
 
+      lspconfig.jsonls.setup({});
+
       if os_utils.is_regular_unix() then
         require("mason").setup()
         require("mason-lspconfig").setup({
