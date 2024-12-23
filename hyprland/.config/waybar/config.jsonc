@@ -10,7 +10,7 @@
   "modules-right": [
     "network",
     "pulseaudio",
-    "backlight",
+    // "backlight",
     "battery",
     "clock"
   ],
@@ -40,11 +40,11 @@
     "tooltip-format": "{time}"
   },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'> </span>",
+    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭 </span>",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'> </span>",
+    "tooltip-format-wifi": "{essid}: {signalStrength}%"
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",

@@ -15,6 +15,7 @@ return {
       })
 
       lspconfig.jsonls.setup({});
+      lspconfig.cssls.setup({});
 
       if os_utils.is_regular_unix() then
         require("mason").setup()
