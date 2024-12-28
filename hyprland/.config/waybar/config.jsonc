@@ -12,6 +12,7 @@
     "pulseaudio",
     // "backlight",
     "battery",
+    "hyprland/language",
     "clock"
   ],
   "clock": {
@@ -72,5 +73,10 @@
       "",
       ""
     ]
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "en",
+    "format-ru": "ru"
   }
 }
