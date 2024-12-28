@@ -2,35 +2,45 @@
   "position": "top",
   "layer": "top",
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "tray"
   ],
   "modules-center": [
     "hyprland/window"
   ],
   "modules-right": [
-    "network",
     "pulseaudio",
-    // "backlight",
     "battery",
     "hyprland/language",
+    "network",
     "clock"
   ],
+  "hyprland/workspaces": {
+    "format": " {icon} ",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
   "clock": {
-    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m/%Y}",
+    "format": " {:%H:%M}"
   },
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
-    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
-    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
-    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
-    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format": "{icon}  {capacity}%",
+    "format-warning": "{icon}  {capacity}%",
+    "format-critical": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
     "format-icons": [
       "",
       "",
@@ -40,15 +50,21 @@
     ],
     "tooltip-format": "{time}"
   },
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) — Zen Browser": "  $1",
+      "": ""
+    }
+  },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'> </span>",
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭 </span>",
+    "format-wifi": "",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'> </span>",
+    "format-disconnected": " ",
     "tooltip-format-wifi": "{essid}: {signalStrength}%"
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
       "default": [
