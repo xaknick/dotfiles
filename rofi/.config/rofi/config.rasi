@@ -6,3 +6,5 @@ configuration {
  display-run: "";
  display-window: " ";
 }
+
+@theme "~/.local/share/rofi/themes/catppuccin-mocha.rasi"
