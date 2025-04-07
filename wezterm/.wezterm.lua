@@ -13,7 +13,6 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.front_end = "WebGpu"
 config.default_cursor_style = "SteadyBar"
 
 config.color_scheme = "Tokyo Night"
