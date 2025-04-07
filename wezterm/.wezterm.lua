@@ -76,11 +76,11 @@ elseif is_linux then
 		config.font_size = 13
 		-- Regular WM
 	else
-		config.enable_wayland = false
+		config.enable_wayland = true
 		config.font_size = 14
 		wezterm.on("gui-startup", function()
 			local tab, pane, window = mux.spawn_window({})
-			window:gui_window():toggle_fullscreen()
+			window:gui_window():maximize()
 		end)
 	end
 end
