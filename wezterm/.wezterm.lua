@@ -5,7 +5,6 @@ local config = {}
 -- OS recognition
 local is_darwin <const> = wezterm.target_triple:find("darwin") ~= nil
 local is_linux <const> = wezterm.target_triple:find("linux") ~= nil
-local is_tiling <const> = os.getenv("HYPRLAND_CMD") ~= nil
 local defined_font <const> = os.getenv("WEZTERM_FONT")
 
 -- Configuring Appearance
@@ -54,10 +53,9 @@ config.keys = {
 		}),
 	},
 }
-config.window_close_confirmation = 'NeverPrompt'
+config.window_close_confirmation = "NeverPrompt"
 
 -- OS related settings
-
 -- MacOS
 if is_darwin then
 	config.font_size = 16.0
@@ -66,22 +64,14 @@ if is_darwin then
 		window:gui_window():maximize()
 	end)
 	config.window_decorations = "RESIZE"
-
 	-- Linux
 elseif is_linux then
-	-- Tiling WM
-	if is_tiling then
-		config.enable_wayland = true
-		config.font_size = 13
-		-- Regular WM
-	else
-		config.enable_wayland = true
-		config.font_size = 14
-		wezterm.on("gui-startup", function()
-			local tab, pane, window = mux.spawn_window({})
-			window:gui_window():maximize()
-		end)
-	end
+	config.enable_wayland = true
+	config.font_size = 14
+	wezterm.on("gui-startup", function()
+		local tab, pane, window = mux.spawn_window({})
+		window:gui_window():maximize()
+	end)
 end
 
 return config
