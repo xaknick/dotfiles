@@ -7,7 +7,7 @@ return {
 		require("null-ls").setup({
 			sources = {
 				formatting.stylua,
-				formatting.nixfmt,
+				-- formatting.nixfmt,
 				formatting.yamlfmt,
 				diagnostics.yamllint,
 			},
