@@ -16,8 +16,7 @@ config.default_cursor_style = "SteadyBar"
 
 config.color_scheme = "Tokyo Night"
 config.font = wezterm.font_with_fallback({
-	defined_font or "MesloLGS NF",
-	"JetBrains Mono",
+	defined_font or "JetBrains Mono",
 })
 config.foreground_text_hsb = {
 	hue = 1.0,
