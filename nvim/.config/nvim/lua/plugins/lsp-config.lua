@@ -14,8 +14,15 @@ return {
         },
       })
 
-      lspconfig.jsonls.setup({});
-      lspconfig.cssls.setup({});
+      lspconfig.jsonls.setup({})
+      lspconfig.cssls.setup({})
+      lspconfig.gopls.setup({
+        settings = {
+          gopls = {
+            gofumpt = true,
+          },
+        },
+      })
 
       if os_utils.is_regular_unix() then
         require("mason").setup()
@@ -23,6 +30,7 @@ return {
           ensure_installed = {
             "lua_ls",
             "yamlls",
+            "gopls",
           },
         })
         require("mason-tool-installer").setup({
@@ -30,7 +38,7 @@ return {
             "stylua",
             "yamllint",
             "yamlfmt",
-          }
+          },
         })
       end
 
