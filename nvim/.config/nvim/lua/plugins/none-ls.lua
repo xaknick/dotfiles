@@ -7,7 +7,6 @@ return {
 		require("null-ls").setup({
 			sources = {
 				formatting.stylua,
-				-- formatting.nixfmt,
 				formatting.yamlfmt,
 				diagnostics.yamllint,
 			},
@@ -22,7 +21,7 @@ return {
 			"n",
 			"<leader>fm",
 			":Format<CR>",
-			{ desc = "Format current buffer (also done on save)", noremap = true, silent = true }
+			{ desc = "Format current buffer", noremap = true, silent = true }
 		)
-	end
+	end,
 }
