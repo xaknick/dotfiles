@@ -5,11 +5,10 @@ return {
 		config = function()
 			local configs = require("nvim-treesitter.configs")
 			configs.setup({
-				ensure_installed = { "lua", "vim", "vimdoc", "query", "javascript", "typescript", "yaml", "toml", "json" },
+				ensure_installed = { "lua", "vim", "vimdoc", "query", "yaml", "toml", "json" },
 				sync_install = false,
 				autoinstall = true,
 				highlight = { enable = true },
-				indent = { enable = true },
 				incremental_selection = {
 					enable = true,
 					keymaps = {
