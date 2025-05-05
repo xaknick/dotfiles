@@ -45,11 +45,12 @@ return {
     telescope.load_extension("fzf")
 
     local keymap = vim.keymap
-
-    keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
-    keymap.set("n", "<leader>fn", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Fuzzy find registers" })
-    keymap.set("n", "<leader>ff", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    keymap.set("n", "<leader>fg", "<cmd>Telescope git_status<cr>", { desc = "Find in git status" })
-  end,
+		local builtin = require("telescope.builtin")
+		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
+		keymap.set("n", "<leader>fn", builtin.find_files, { desc = "Fuzzy find files in cwd" })
+		keymap.set("n", "<leader>fr", builtin.registers, { desc = "Fuzzy find registers" })
+		keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Find string in cwd" })
+		keymap.set("n", "<leader>fg", builtin.git_status, { desc = "Find in git status" })
+		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+end,
 }
