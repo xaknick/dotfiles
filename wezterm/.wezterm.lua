@@ -31,7 +31,7 @@ config.foreground_text_hsb = {
 -- Window decoration
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.99
 config.macos_window_background_blur = 20
 config.window_padding = {
 	bottom = 0,
