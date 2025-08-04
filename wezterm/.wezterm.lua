@@ -51,6 +51,11 @@ config.keys = {
 			cwd = wezterm.home_dir,
 		}),
 	},
+	{
+    key = "Enter",
+    mods = "SHIFT",
+    action = wezterm.action.SendString("\n"),
+  },
 }
 config.window_close_confirmation = "NeverPrompt"
 
