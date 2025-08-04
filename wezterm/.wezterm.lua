@@ -37,6 +37,21 @@ config.window_padding = {
 	bottom = 0,
 }
 
+-- Configure scrolling
+config.enable_scroll_bar = true
+config.mouse_bindings = {
+	{
+		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+		mods = "NONE",
+		action = wezterm.action.ScrollByLine(-3), -- change 3 to your desired number of lines
+	},
+	{
+		event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+		mods = "NONE",
+		action = wezterm.action.ScrollByLine(3), -- change 3 to your desired number of lines
+	},
+}
+
 -- Key bindings
 config.keys = {
 	{
@@ -52,10 +67,10 @@ config.keys = {
 		}),
 	},
 	{
-    key = "Enter",
-    mods = "SHIFT",
-    action = wezterm.action.SendString("\n"),
-  },
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action.SendString("\n"),
+	},
 }
 config.window_close_confirmation = "NeverPrompt"
 
