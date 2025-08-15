@@ -5,6 +5,7 @@ return {
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          -- LSP services
           "lua_ls",
           "yamlls",
           "gopls",
@@ -12,9 +13,12 @@ return {
       })
       require("mason-tool-installer").setup({
         ensure_installed = {
+          -- Formatters (for conform.nvim)
           "stylua",
-          "yamllint",
           "yamlfmt",
+
+          -- Linters
+          "yamllint",
         },
       })
 
@@ -34,27 +38,6 @@ return {
         settings = {
           gopls = {
             gofumpt = true,
-          },
-        },
-      })
-      -- TypeScript
-      lspconfig.ts_ls.setup({
-        -- Optional: customize filetypes, root_dir, or settings
-        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" },
-        root_dir = lspconfig.util.root_pattern("tsconfig.json", "jsconfig.json", "package.json", ".git"),
-        settings = {
-          typescript = {
-            inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
-            tsserver = {
-              useSyntaxServer = false,
-            },
           },
         },
       })
