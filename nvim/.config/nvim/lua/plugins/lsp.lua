@@ -31,6 +31,7 @@ return {
 					-- Formatters (for conform.nvim)
 					"stylua",
 					"yamlfmt",
+					"prettierd",
 
 					-- Linters
 					"yamllint",
