@@ -23,6 +23,7 @@ return {
 					"lua_ls",
 					"yamlls",
 					"gopls",
+					"vtsls",
 				},
 			})
 			require("mason-tool-installer").setup({
@@ -76,6 +77,8 @@ return {
 					},
 				},
 			})
+			-- Typescript
+			lspconfig.vtsls.setup({})
 			-- Others
 			lspconfig.jsonls.setup({})
 			lspconfig.cssls.setup({})
