@@ -33,6 +33,7 @@ return {
 
 					-- Linters
 					"yamllint",
+					"eslint_d",
 				},
 			})
 
