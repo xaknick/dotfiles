@@ -1,6 +1,7 @@
 local opt = vim.opt
 opt.backup = false
 opt.swapfile = false
+opt.undofile = true
 
 opt.relativenumber = true
 opt.number = true
@@ -24,14 +25,14 @@ opt.virtualedit = "block"
 
 opt.termguicolors = true
 
-opt.mouse = 'a' -- Mouse mode "all"
+opt.mouse = "a" -- Mouse mode "all"
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
-opt.whichwrap = 'bs<>[]hl' -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
+opt.whichwrap = "bs<>[]hl" -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
 
 -- Sync clipboard between OS and Neovim.
 -- Schedule the setting after `UiEnter` because it can increase startup-time.
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+	vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Decrease update time
