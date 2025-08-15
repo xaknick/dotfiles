@@ -24,6 +24,7 @@ return {
 					"yamlls",
 					"gopls",
 					"vtsls",
+					"jsonls",
 				},
 			})
 			require("mason-tool-installer").setup({
@@ -39,7 +40,7 @@ return {
 				},
 			})
 
-			local lspconfig = require("lspconfig")
+			-- Extended configuration
 			-- Lua
 			vim.lsp.config("lua_ls", {
 				on_init = function(client)
@@ -70,20 +71,17 @@ return {
 				end,
 				settings = { Lua = {} },
 			})
+
 			-- Golang
-			lspconfig.gopls.setup({
+			vim.lsp.config("gopls", {
 				settings = {
 					gopls = {
 						gofumpt = true,
 					},
 				},
 			})
-			-- Typescript
-			lspconfig.vtsls.setup({})
-			-- Others
-			lspconfig.jsonls.setup({})
-			lspconfig.cssls.setup({})
 
+			-- Keymap for LSP
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
