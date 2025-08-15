@@ -14,4 +14,5 @@ require("lazy").setup("plugins", {
 	defaults = {
 		version = false,
 	},
+	rocks = { enabled = false },
 })
