@@ -26,6 +26,7 @@ return {
 					"gopls",
 					"vtsls",
 					"jsonls",
+					"rust_analyzer",
 				},
 			})
 			require("mason-tool-installer").setup({
