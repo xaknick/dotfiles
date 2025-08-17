@@ -5,9 +5,9 @@ return {
 		config = function()
 			local configs = require("nvim-treesitter.configs")
 			configs.setup({
-				ensure_installed = { "lua", "vim", "vimdoc", "query", "yaml", "toml", "json" },
+				ensure_installed = { "lua", "vim", "vimdoc", "query", "yaml", "toml", "json", "typescript" },
 				sync_install = false,
-				autoinstall = true,
+				auto_install = true,
 				highlight = { enable = true },
 				incremental_selection = {
 					enable = true,
@@ -18,6 +18,8 @@ return {
 						node_decremental = "<leader>sd",
 					},
 				},
+				modules = {},
+				ignore_install = {},
 				textobjects = {
 					select = {
 						enable = true,
