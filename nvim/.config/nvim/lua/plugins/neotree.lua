@@ -10,7 +10,8 @@ return {
 	config = function()
 		local keymap = vim.keymap
 
-		keymap.set("n", "<leader>ee", ":Neotree filesystem reveal left<CR>", {})
+		keymap.set("n", "<leader>ee", ":Neotree float filesystem<CR>", {})
+		keymap.set("n", "<leader>es", ":Neotree filesystem reveal left<CR>", {})
 		keymap.set("n", "<leader>eb", ":Neotree buffers<CR>", {})
 		keymap.set("n", "<leader>eg", ":Neotree float git_status<CR>", {})
 
