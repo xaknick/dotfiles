@@ -43,12 +43,12 @@ config.mouse_bindings = {
 	{
 		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
 		mods = "NONE",
-		action = wezterm.action.ScrollByLine(-3), -- change 3 to your desired number of lines
+		action = wezterm.action.ScrollByLine(-2), -- change 2 to your desired number of lines
 	},
 	{
 		event = { Down = { streak = 1, button = { WheelDown = 1 } } },
 		mods = "NONE",
-		action = wezterm.action.ScrollByLine(3), -- change 3 to your desired number of lines
+		action = wezterm.action.ScrollByLine(2), -- change 2 to your desired number of lines
 	},
 }
 
@@ -86,7 +86,7 @@ if is_darwin then
 	-- Linux
 elseif is_linux then
 	config.enable_wayland = true
-	config.font_size = 14
+	config.font_size = 12
 	wezterm.on("gui-startup", function()
 		local _, _, window = mux.spawn_window({})
 		window:gui_window():maximize()
