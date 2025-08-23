@@ -3,9 +3,9 @@ local mux = wezterm.mux
 local config = {}
 
 -- OS recognition
-local is_darwin <const> = wezterm.target_triple:find("darwin") ~= nil
-local is_linux <const> = wezterm.target_triple:find("linux") ~= nil
-local defined_font <const> = os.getenv("WEZTERM_FONT")
+local is_darwin = wezterm.target_triple:find("darwin") ~= nil
+local is_linux = wezterm.target_triple:find("linux") ~= nil
+local defined_font = os.getenv("WEZTERM_FONT")
 
 -- Configuring Appearance
 if wezterm.config_builder then
@@ -79,7 +79,7 @@ config.window_close_confirmation = "NeverPrompt"
 if is_darwin then
 	config.font_size = 16.0
 	wezterm.on("gui-startup", function()
-		local tab, pane, window = mux.spawn_window({})
+		local _, _, window = mux.spawn_window({})
 		window:gui_window():maximize()
 	end)
 	config.window_decorations = "RESIZE"
@@ -88,7 +88,7 @@ elseif is_linux then
 	config.enable_wayland = true
 	config.font_size = 14
 	wezterm.on("gui-startup", function()
-		local tab, pane, window = mux.spawn_window({})
+		local _, _, window = mux.spawn_window({})
 		window:gui_window():maximize()
 	end)
 end
