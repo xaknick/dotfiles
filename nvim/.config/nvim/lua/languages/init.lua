@@ -27,6 +27,18 @@ function M.get_tools()
 	return tools
 end
 
+-- Get all DAP adapters across languages
+function M.get_dap_adapters()
+	local adapters = {}
+	for _, lang in ipairs(languages) do
+		local ok, lang_config = pcall(require, "languages." .. lang .. ".dap")
+		if ok and lang_config.adapters then
+			vim.list_extend(adapters, lang_config.adapters)
+		end
+	end
+	return adapters
+end
+
 -- Get all formatter configurations
 function M.get_formatters()
 	local formatters = {}

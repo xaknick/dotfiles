@@ -1,6 +1,6 @@
 local M = {}
 
-M.tools = { "clippy" }
+M.tools = {}
 
 M.formatters = {
 	rust = { "rustfmt" },

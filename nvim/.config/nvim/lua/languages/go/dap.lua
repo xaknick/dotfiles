@@ -1,5 +1,7 @@
 local M = {}
 
+M.adapters = { "delve" }
+
 function M.setup()
 	local dap = require("dap")
 

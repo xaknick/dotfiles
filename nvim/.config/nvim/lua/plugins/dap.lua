@@ -47,10 +47,7 @@ return {
 		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
 		opts = {
 			automatic_setup = true,
-			ensure_installed = {
-				"coreclr", -- .NET (netcoredbg)
-				"delve", -- Go (dlv)
-			},
+			ensure_installed = require("languages").get_dap_adapters(),
 		},
 		config = function(_, opts)
 			require("mason-nvim-dap").setup(opts)
