@@ -28,6 +28,9 @@ config.foreground_text_hsb = {
 -- config.initial_cols = 140
 -- config.initial_rows = 50
 
+-- Notification settins
+config.notification_handling = "SuppressFromFocusedTab"
+
 -- Window decoration
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
