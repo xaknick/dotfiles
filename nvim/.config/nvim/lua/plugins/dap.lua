@@ -9,8 +9,8 @@ return {
 			)
 			vim.fn.sign_define("DapStopped", { text = "▶", texthl = "DiagnosticInfo", linehl = "Visual", numhl = "" })
 
-			-- Load langs configurations
-			require("plugins.dap-lang")
+			-- Load language-specific DAP configurations
+			require("languages").load_dap_configs()
 		end,
 	},
 	{
