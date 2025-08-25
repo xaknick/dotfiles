@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local mux = wezterm.mux
+local hotkeys = require("hotkeys")
 local config = {}
 
 -- OS recognition
@@ -28,7 +29,7 @@ config.foreground_text_hsb = {
 -- config.initial_cols = 140
 -- config.initial_rows = 50
 
--- Notification settins
+-- Notification settings
 config.notification_handling = "SuppressFromFocusedTab"
 
 -- Window decoration
@@ -56,25 +57,9 @@ config.mouse_bindings = {
 }
 
 -- Key bindings
-config.keys = {
-	{
-		key = "w",
-		mods = "CMD",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
-	},
-	{
-		key = "t",
-		mods = "ALT|SHIFT",
-		action = wezterm.action.SpawnCommandInNewTab({
-			cwd = wezterm.home_dir,
-		}),
-	},
-	{
-		key = "Enter",
-		mods = "SHIFT",
-		action = wezterm.action.SendString("\n"),
-	},
-}
+config.keys = hotkeys.setup()
+
+-- Notification settings
 config.window_close_confirmation = "NeverPrompt"
 
 -- OS related settings
