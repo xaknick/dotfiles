@@ -7,4 +7,14 @@ return {
 			lsp_format = "fallback",
 		},
 	},
+	keys = {
+		{
+			"<leader>cf",
+			function()
+				require("conform").format({ async = true, lsp_format = "fallback" })
+			end,
+			mode = "n",
+			desc = "Format buffer",
+		},
+	},
 }
