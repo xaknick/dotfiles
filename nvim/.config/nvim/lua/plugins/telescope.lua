@@ -17,8 +17,8 @@ return {
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-            ["<C-j>"] = actions.move_selection_next, -- move to next result
-            ["<c-t>"] = open_with_trouble,         -- open with trouble
+            ["<C-j>"] = actions.move_selection_next,     -- move to next result
+            ["<c-t>"] = open_with_trouble,               -- open with trouble
           },
           n = {
             ["<c-t>"] = open_with_trouble,
@@ -45,12 +45,12 @@ return {
     telescope.load_extension("fzf")
 
     local keymap = vim.keymap
-		local builtin = require("telescope.builtin")
-		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
-		keymap.set("n", "<leader>fn", builtin.find_files, { desc = "Fuzzy find files in cwd" })
-		keymap.set("n", "<leader>fr", builtin.registers, { desc = "Fuzzy find registers" })
-		keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Find string in cwd" })
-		keymap.set("n", "<leader>fg", builtin.git_status, { desc = "Find in git status" })
-		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
-end,
+    local builtin = require("telescope.builtin")
+    keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
+    keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
+    keymap.set("n", "<leader>fr", builtin.registers, { desc = "Fuzzy find registers" })
+    keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
+    keymap.set("n", "<leader>fs", builtin.git_status, { desc = "Find in git status" })
+    keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+  end,
 }
