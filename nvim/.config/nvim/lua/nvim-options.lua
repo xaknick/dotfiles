@@ -25,9 +25,9 @@ opt.virtualedit = "block"
 
 opt.termguicolors = true
 
-opt.mouse = "a" -- Mouse mode "all"
+opt.mouse = "a"                    -- Mouse mode "all"
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
-opt.whichwrap = "bs<>[]hl" -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
+opt.whichwrap = "bs<>[]hl"         -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
 
 -- Sync clipboard between OS and Neovim.
 -- Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -45,3 +45,7 @@ vim.opt.timeoutlen = 300
 -- Sets how neovim will display certain whitespace characters in the editor.
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Disable netrw for correct using neotree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

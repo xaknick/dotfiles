@@ -34,6 +34,7 @@ return {
 				use_libuv_file_watcher = true,
 			},
 			window = {
+				position = "float",
 				mappings = {
 					["l"] = "open",
 					["h"] = "close_node",
