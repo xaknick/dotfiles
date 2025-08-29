@@ -45,7 +45,7 @@ function M.get_formatters()
 	for _, lang in ipairs(languages) do
 		local ok, lang_config = pcall(require, "languages." .. lang .. ".tools")
 		if ok and lang_config.formatters then
-			vim.tbl_deep_extend("force", formatters, lang_config.formatters)
+			formatters = vim.tbl_deep_extend("force", formatters, lang_config.formatters)
 		end
 	end
 	return formatters
