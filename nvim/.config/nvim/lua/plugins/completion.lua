@@ -15,7 +15,13 @@ return {
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
-		keymap = { preset = "super-tab" },
+		keymap = {
+			preset = "enter",
+			["<Tab>"] = { "select_next", "fallback" },
+			["<S-Tab>"] = { "select_prev", "fallback" },
+			["<Up>"] = { "snippet_backward", "fallback" },
+			["<Down>"] = { "snippet_forward", "fallback" },
+		},
 
 		appearance = {
 			nerd_font_variant = "mono",
