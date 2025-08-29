@@ -32,6 +32,12 @@ vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true, desc = 'Indent 
 -- Keep last yanked when pasting
 vim.keymap.set('v', 'p', '"_dP', { noremap = true, silent = true, desc = 'Paste without losing register' })
 
+-- Move lines up/down
+vim.keymap.set('n', '<A-j>', '<cmd>m .+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('n', '<A-k>', '<cmd>m .-2<CR>==', { desc = 'Move line up' })
+vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', { desc = 'Move selection down' })
+vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', { desc = 'Move selection up' })
+
 vim.keymap.set('n', '<leader>ch', '<cmd>checkhealth<CR>', { noremap = true, silent = true, desc = 'Check health' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
