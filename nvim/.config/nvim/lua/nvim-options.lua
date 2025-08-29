@@ -2,6 +2,7 @@ local opt = vim.opt
 opt.backup = false
 opt.swapfile = false
 opt.undofile = true
+opt.confirm = true
 
 opt.relativenumber = true
 opt.number = true
