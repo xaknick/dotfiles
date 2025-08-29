@@ -42,7 +42,6 @@ return {
 					map("n", "gd", vim.lsp.buf.definition, "LSP: Go to Definition")
 					map("n", "gD", vim.lsp.buf.declaration, "LSP: Go to Declaration")
 					map("n", "gy", vim.lsp.buf.type_definition, "LSP: Go to Type Definition")
-					map("n", "gR", vim.lsp.buf.references, "LSP: References")
 					map("n", "gk", vim.lsp.buf.signature_help, "LSP: Signature Help")
 					map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "LSP: Code Action")
 					map({ "n", "v" }, "<leader>cr", vim.lsp.buf.rename, "LSP: Rename")
