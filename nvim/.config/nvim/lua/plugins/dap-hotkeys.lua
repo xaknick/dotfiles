@@ -40,6 +40,14 @@ return {
 					mode = "n",
 				},
 				{
+					"<leader>dC",
+					function()
+						require("dap").run_to_cursor()
+					end,
+					desc = "DAP Run to cursor",
+					mode = "n",
+				},
+				{
 					"<leader>dq",
 					function()
 						require("dap").terminate()
