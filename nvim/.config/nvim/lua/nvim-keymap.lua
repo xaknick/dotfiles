@@ -22,6 +22,9 @@ vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', { noremap = true, silent = true, de
 -- Toggle line wrapping
 vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', { noremap = true, silent = true, desc = 'Toggle line wrap' })
 
+-- Toggle whitespace visibility
+vim.keymap.set('n', '<leader>tw', '<cmd>set list!<CR>', { noremap = true, silent = true, desc = 'Toggle whitespace' })
+
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true, desc = 'Indent left' })
 vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true, desc = 'Indent right' })

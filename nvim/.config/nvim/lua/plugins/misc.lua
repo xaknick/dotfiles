@@ -36,10 +36,10 @@ return {
     "numToStr/Comment.nvim",
     opts = {},
     config = function()
-      vim.keymap.set("n", "<C-/>", require("Comment.api").toggle.linewise.current, { 
-        noremap = true, 
-        silent = true, 
-        desc = "Toggle comment line" 
+      vim.keymap.set("n", "<C-/>", require("Comment.api").toggle.linewise.current, {
+        noremap = true,
+        silent = true,
+        desc = "Toggle comment line"
       })
       vim.keymap.set(
         "v",

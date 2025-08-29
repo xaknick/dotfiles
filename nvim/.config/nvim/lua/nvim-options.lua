@@ -43,8 +43,7 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 
 -- Sets how neovim will display certain whitespace characters in the editor.
--- vim.opt.list = true
--- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '→ ', space = '·', trail = '·', nbsp = '␣' }
 
 -- Disable netrw for correct using neotree
 vim.g.loaded_netrw = 1
