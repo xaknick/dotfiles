@@ -37,6 +37,7 @@ HISTFILE=~/.zsh_history
 # source and plugins
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
+plug "$HOME/.config/zsh/hotkeys.zsh"
 plug "$ZSH_PLUGINS/*"
 
 # Starship promt
