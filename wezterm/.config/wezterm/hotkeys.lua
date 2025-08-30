@@ -14,10 +14,6 @@ function M.setup()
 		{ key = "Enter",      mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 		{ key = "Enter",      mods = "CTRL|ALT",   action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 		{ key = "W",          mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
-		-- { key = "LeftArrow",  mods = "ALT",        action = wezterm.action.ActivatePaneDirection("Left") },
-		-- { key = "RightArrow", mods = "ALT",        action = wezterm.action.ActivatePaneDirection("Right") },
-		-- { key = "UpArrow",    mods = "ALT",        action = wezterm.action.ActivatePaneDirection("Up") },
-		-- { key = "DownArrow",  mods = "ALT",        action = wezterm.action.ActivatePaneDirection("Down") },
 		-- Tab navigation (browser-like)
 		{ key = "Tab",        mods = "CTRL",       action = wezterm.action.ActivateTabRelative(1) },
 		{ key = "Tab",        mods = "CTRL|SHIFT", action = wezterm.action.ActivateTabRelative(-1) },
@@ -33,6 +29,7 @@ function M.setup()
 		table.insert(keys, { key = "c", mods = "CTRL", action = wezterm.action.CopyTo("Clipboard") })
 		table.insert(keys, { key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") })
 		table.insert(keys, { key = "c", mods = "CTRL|SHIFT", action = wezterm.action.SendKey({ key = "c", mods = "CTRL" }) })
+		table.insert(keys, { key = "v", mods = "CTRL|SHIFT", action = wezterm.action.SendKey({ key = "v", mods = "CTRL" }) })
 	end
 
 	return keys
