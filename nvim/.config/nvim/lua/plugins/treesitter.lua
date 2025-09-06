@@ -15,6 +15,7 @@ return {
 					"json",
 					"typescript",
 					"rust",
+					"c_sharp",
 				},
 				sync_install = false,
 				auto_install = true,
