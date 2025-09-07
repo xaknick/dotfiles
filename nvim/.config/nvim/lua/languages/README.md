@@ -1,10 +1,11 @@
 # Language Configuration System
 
-This directory contains language-specific configurations organized by programming language. Each language can have up to 3 files:
+This directory contains language-specific configurations organized by programming language. Each language can have up to 4 files:
 
 - `lsp.lua` - Language Server Protocol configuration
 - `dap.lua` - Debug Adapter Protocol configuration  
 - `tools.lua` - Formatters, linters, and other tools
+- `plugins.lua` - Language-specific plugins (both LSP and general)
 
 ## Quick Start
 
@@ -84,6 +85,30 @@ M.formatters = {
 return M
 ```
 
+### Plugins Template (`plugins.lua`)
+
+```lua
+local M = {}
+
+-- LSP-related plugins (loaded as dependencies for the LSP plugin)
+M.lsp_plugins = {
+	"plugin/for-lsp-enhancement",
+}
+
+-- General language-specific plugins (loaded independently)
+M.plugins = {
+	{
+		"plugin/name",
+		ft = { "filetype1", "filetype2" },
+		config = function()
+			-- Plugin configuration
+		end,
+	},
+}
+
+return M
+```
+
 ## Real Examples
 
 ### Simple Language (JSON)
@@ -96,7 +121,8 @@ json/
 ```
 typescript/
 ├── lsp.lua          # vtsls + custom settings + keymaps
-└── tools.lua        # prettierd, eslint_d
+├── tools.lua        # prettierd, eslint_d
+└── plugins.lua      # nvim-vtsls for LSP, other TS plugins
 ```
 
 ### Debug-Heavy Language (Go)
@@ -112,6 +138,8 @@ The `init.lua` file automatically:
 - Collects all LSP servers → `mason-lspconfig.ensure_installed`
 - Collects all tools → `mason-tool-installer.ensure_installed`  
 - Collects all formatters → `conform.formatters_by_ft`
+- Collects all LSP plugins → LSP plugin dependencies
+- Collects all general plugins → `plugins/languages.lua`
 - Loads all configurations safely with `pcall()`
 
 ## Best Practices
@@ -132,6 +160,11 @@ The `init.lua` file automatically:
 - Need formatters or linters
 - Want tools auto-installed by Mason
 
+**Create `plugins.lua` when:**
+- Need LSP enhancement plugins
+- Want language-specific plugins (testing, syntax, etc.)
+- Want plugins auto-loaded for the language
+
 ### When NOT to Create Files
 
 **Skip files when:**
@@ -143,7 +176,7 @@ The `init.lua` file automatically:
 
 - ✅ One language per directory
 - ✅ Only create files that add value
-- ✅ Use consistent naming: `lsp.lua`, `dap.lua`, `tools.lua`
+- ✅ Use consistent naming: `lsp.lua`, `dap.lua`, `tools.lua`, `plugins.lua`
 - ✅ Always return a module table `M`
 
 ## Adding a New Language

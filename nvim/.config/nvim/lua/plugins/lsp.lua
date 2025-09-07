@@ -10,12 +10,11 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = {
+		dependencies = vim.list_extend({
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			"yioneko/nvim-vtsls", -- For TypeScript
-		},
+		}, require("languages").get_lsp_plugins()),
 		config = function()
 			require("mason").setup()
 			require("mason-lspconfig").setup({
