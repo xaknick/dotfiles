@@ -46,7 +46,7 @@ eval "$(starship init zsh)"
 # Edit the command line
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '^e' edit-command-line
+bindkey '^o' edit-command-line
 
 # fzf config
 source <(fzf --zsh)
