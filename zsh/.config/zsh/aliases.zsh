@@ -10,3 +10,8 @@ vc() {
   builtin cd -- "$cfg" || return
   nvim .
 }
+
+# Fix for Claude Code: force-pass the current PATH to the process.
+# This resolves 'Exit code 127' issues where Claude cannot find git or other utilities
+# because it launches subshells in a "clean" environment without loading your .zshrc.
+alias claude='PATH="$PATH" claude'
