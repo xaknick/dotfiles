@@ -5,6 +5,8 @@ alias mc="mc -u"
 alias lg="lazygit"
 alias z="zellij"
 
+tr() { wezterm cli set-tab-title "$*"; }
+
 vc() {
   local cfg="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
   builtin cd -- "$cfg" || return
