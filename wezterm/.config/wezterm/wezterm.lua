@@ -18,6 +18,8 @@ config.default_cursor_style = "SteadyBar"
 config.color_scheme = "Tokyo Night"
 config.font = wezterm.font_with_fallback({
 	defined_font or "JetBrains Mono",
+	"Symbols Nerd Font Mono",
+	"Noto Color Emoji",
 })
 config.foreground_text_hsb = {
 	hue = 1.0,
@@ -29,13 +31,18 @@ config.foreground_text_hsb = {
 -- config.initial_cols = 140
 -- config.initial_rows = 50
 
+-- Performance
+config.max_fps = 120
+config.animation_fps = 120
+config.front_end = "WebGpu"
+config.webgpu_power_preference = "HighPerformance"
+
 -- Notification settings
 config.notification_handling = "SuppressFromFocusedTab"
 
 -- Window decoration
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
-config.window_background_opacity = 0.99
 config.macos_window_background_blur = 20
 config.window_padding = {
 	bottom = 0,
