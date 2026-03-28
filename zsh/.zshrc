@@ -59,3 +59,6 @@ export FZF_ALT_C_OPTS="--preview 'eza --all --tree --color=always {} | head -200
 # Zoxide config
 eval "$(zoxide init --cmd cd zsh)"
 export PATH=~/.npm-global/bin:$PATH
+
+# opencode
+export PATH=/home/xaknick/.opencode/bin:$PATH
