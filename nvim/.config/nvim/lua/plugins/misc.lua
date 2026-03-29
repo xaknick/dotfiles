@@ -56,4 +56,16 @@ return {
       require('nvim-highlight-colors').setup({})
     end,
   },
+  -- Preview definitions in a floating window
+  {
+    "rmagatti/goto-preview",
+    event = "LspAttach",
+    opts = {},
+    keys = {
+      { "gpd", function() require("goto-preview").goto_preview_definition() end, desc = "Preview Definition" },
+      { "gpy", function() require("goto-preview").goto_preview_type_definition() end, desc = "Preview Type Definition" },
+      { "gpi", function() require("goto-preview").goto_preview_implementation() end, desc = "Preview Implementation" },
+      { "gP", function() require("goto-preview").close_all_win() end, desc = "Close All Preview Windows" },
+    },
+  },
 }
