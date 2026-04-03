@@ -1,5 +1,5 @@
 ---
-model: openai:gpt-5-nano
+model: gemini:gemini-2.5-flash
 temperature: null
 top_p: null
 ---
