@@ -54,12 +54,12 @@ config.mouse_bindings = {
 	{
 		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
 		mods = "NONE",
-		action = wezterm.action.ScrollByLine(-2), -- change 2 to your desired number of lines
+		action = wezterm.action.ScrollByLine(-5), -- change 2 to your desired number of lines
 	},
 	{
 		event = { Down = { streak = 1, button = { WheelDown = 1 } } },
 		mods = "NONE",
-		action = wezterm.action.ScrollByLine(2), -- change 2 to your desired number of lines
+		action = wezterm.action.ScrollByLine(5), -- change 2 to your desired number of lines
 	},
 }
 
