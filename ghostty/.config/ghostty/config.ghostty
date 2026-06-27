@@ -1,3 +1,7 @@
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
+
+# Match Supacode's terminal (Supacode runs Ghostty under the hood)
+theme = "Supacode Dark"
+font-family = "JetBrains Mono"
 font-size = 16
