@@ -73,10 +73,10 @@ config.window_close_confirmation = "NeverPrompt"
 -- MacOS
 if is_darwin then
 	config.font_size = 16.0
-	wezterm.on("gui-startup", function()
-		local _, _, window = mux.spawn_window({})
-		window:gui_window():maximize()
-	end)
+	-- wezterm.on("gui-startup", function()
+	-- 	-- local _, _, window = mux.spawn_window({})
+	-- 	-- window:gui_window():maximize()
+	-- end)
 	config.window_decorations = "RESIZE"
 	-- Linux
 elseif is_linux then
