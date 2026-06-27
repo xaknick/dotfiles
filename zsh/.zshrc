@@ -43,6 +43,13 @@ plug "$ZSH_PLUGINS/*"
 # Starship promt
 eval "$(starship init zsh)"
 
+# Add a blank line between prompts, but skip it on the first prompt at startup
+precmd() {
+  precmd() {
+    echo
+  }
+}
+
 # Edit the command line
 autoload -U edit-command-line
 zle -N edit-command-line
