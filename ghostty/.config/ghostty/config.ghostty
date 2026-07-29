@@ -7,3 +7,6 @@ background-blur = 20
 
 font-family = "JetBrains Mono"
 font-size = 16
+
+# Slow down mouse-wheel scrolling (default is discrete:3)
+mouse-scroll-multiplier = discrete:1
