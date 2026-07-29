@@ -69,3 +69,6 @@ export PATH=~/.npm-global/bin:$PATH
 
 # opencode
 export PATH=/home/xaknick/.opencode/bin:$PATH
+
+# LM Studio CLI
+export PATH="$HOME/.lmstudio/bin:$PATH"
