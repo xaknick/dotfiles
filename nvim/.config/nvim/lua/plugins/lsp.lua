@@ -1,14 +1,5 @@
 return {
 	{
-		"folke/neodev.nvim",
-		opts = {},
-		config = function()
-			require("neodev").setup({
-				library = { types = true, lsp = { "lua_ls" } },
-			})
-		end,
-	},
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = vim.list_extend({
 			"williamboman/mason.nvim",
