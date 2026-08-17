@@ -44,7 +44,7 @@ return {
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
-		dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
+		dependencies = { "mason-org/mason.nvim", "mfussenegger/nvim-dap" },
 		opts = {
 			automatic_setup = true,
 			ensure_installed = require("languages").get_dap_adapters(),
