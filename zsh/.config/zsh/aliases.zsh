@@ -17,3 +17,6 @@ vc() {
 # This resolves 'Exit code 127' issues where Claude cannot find git or other utilities
 # because it launches subshells in a "clean" environment without loading your .zshrc.
 alias claude='PATH="$PATH" claude'
+
+# Codex CLI with working profile
+alias cxw='CODEX_HOME="$HOME/.codex-work" codex'
