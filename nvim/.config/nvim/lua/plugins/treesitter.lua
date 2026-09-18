@@ -2,6 +2,8 @@ local parsers = {
 	"lua",
 	"vim",
 	"vimdoc",
+	"markdown",
+	"markdown_inline",
 	"query",
 	"yaml",
 	"toml",
