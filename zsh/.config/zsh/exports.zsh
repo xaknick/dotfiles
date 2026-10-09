@@ -2,6 +2,7 @@
 HISTSIZE=1000000
 SAVEHIST=1000000
 export EDITOR=nvim
+export HOMEBREW_NO_ENV_HINTS=1
 
 # Path variables
 export PATH="$HOME/.local/bin":$PATH
