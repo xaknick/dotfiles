@@ -49,7 +49,7 @@ config.window_padding = {
 }
 
 -- Configure scrolling
-config.enable_scroll_bar = true
+config.enable_scroll_bar = false
 config.mouse_bindings = {
 	{
 		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
